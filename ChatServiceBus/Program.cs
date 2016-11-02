@@ -92,8 +92,8 @@ namespace ChatServiceBus
                 MainMenu();
                 return;
             }
-            //check if the sender exist
-            if (!Helper.IsSubscriptionExist(toUserName))
+            //check if the sender exist            
+            if (toUserName.ToLowerInvariant() != "all" && !Helper.IsSubscriptionExist(toUserName))
             {
                 Console.WriteLine("Your user doesn't exist, please choose another one");
                 DisplaySenderMenu();
